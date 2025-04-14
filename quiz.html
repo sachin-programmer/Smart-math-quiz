@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>{{ question['question'] }}</h2>
+    <div id="options">
+        {% for opt in question['options'] %}
+        <button onclick="checkAnswer('{{ opt }}', '{{ question['answer'] }}')">{{ opt }}</button>
+        {% endfor %}
+    </div>
+    <p id="result"></p>
+    <a href="/quiz"><button>Next Question</button></a>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
